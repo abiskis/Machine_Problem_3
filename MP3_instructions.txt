@@ -1,0 +1,133 @@
+Machine Problem 3: Optimizing Kiosk Placement Using Hill Climbing Algorithm
+
+
+The mayor of City XYZ is planning to build a new park with five entrance gates. The park will have three kiosks that will sell food, water, and juice to visitors. Your task is to determine the optimal placement of these kiosks such that they are as centrally located as possible, minimizing the total distance from all five gates. This will ensure that visitors entering from any gate can easily access the kiosks.
+
+To solve this problem, you will use the Hill Climbing algorithm, a local search optimization technique. The park is represented as a 2D grid, and the gates and kiosks are represented as coordinates on this grid. Your goal is to find the best locations for the three kiosks such that the total distance from all gates to their nearest kiosk is minimized.
+
+
+MP3_baseCode.py
+
+
+Problem Breakdown
+
+    Park Representation:
+    The park is represented as a grid with dimensions height x width.
+    Certain cells in the grid are designated as gates (entrance points).
+    Kiosk Placement:
+    You need to place three kiosks in the park.
+    The initial placement of kiosks should be random, but they must be placed in cells that are not occupied by gates or other kiosks.
+    Objective:
+    Minimize the total Manhattan distance from each gate to its nearest kiosk.
+     The Manhattan distance between two points ﻿left parenthesis x 1 comma y 1 right parenthesis﻿ and ﻿left parenthesis x 2 comma y 2 right parenthesis﻿ is calculated as:
+
+                                               
+
+﻿text Distance end text equals straight ∣ x 1 minus x 2 straight ∣ plus straight ∣ y 1 minus y 2 straight ∣﻿
+
+Hill Climbing Algorithm:
+
+    The Hill Climbing algorithm is an iterative optimization technique that starts with a random solution and tries to improve it by making small changes.
+    In this case, the algorithm will:
+    Start with a random placement of kiosks.
+    For each kiosk, consider moving it to its neighboring cells (up, down, left, right) that are not occupied by gates or other kiosks.
+    Move the kiosk to a neighboring cell if it improves the total distance (i.e., reduces the total Manhattan distance from all gates to their nearest kiosk).
+    Repeat this process until no further improvement can be made or a maximum number of iterations is reached.
+
+
+Tasks to Complete
+
+For this assignment, you are given base Python 3 code (MP3_baseCode.py). So, download this code first, and then do the following:
+
+    Implement the get_neighbors Function:
+    This function should return valid neighboring cells for a given kiosk position.
+    Neighboring cells are those that are up, down, left, or right of the current cell and are not occupied by gates or other kiosks.
+    The function must ensure that the neighboring cells are within the bounds of the grid (i.e., the row and column indices are valid).
+    Implement the get_cost Function:
+    This function should calculate the total distance from all gates to their nearest kiosk based on the current placement of kiosks.
+    For each gate, find the nearest kiosk (the one with the smallest Manhattan distance) and sum up these distances for all gates.
+
+Follow Coding Standards:
+
+    Your code should follow good coding practices, including:
+    Proper use of whitespace and indentation.
+    Meaningful variable names.
+    Comments to explain complex logic.
+    At the top of the file, include a block comment with your name, date, course name, semester, and assignment name.
+
+Additional Requirements:
+
+    Your source code file should be named mp3.py.
+    You can only import numpy and random packages.
+    Your program must work correctly for all inputs.
+
+
+What to Turn In
+
+    Source Code (mp3.py):
+
+    Submit your completed Python file via Blackboard.
+    Ensure your code is well-organized, commented, and follows the specified requirements.
+	
+Tips for Success
+
+Test the  get_neighbors and get_cost Functions:
+
+    Test the functions with different kiosk positions, grid sizes, and gate/kiosk placements to ensure they work correctly in all scenarios.
+
+Understand the Hill Climbing Algorithm:
+
+    Make sure you understand how the Hill Climbing algorithm works before implementing it.
+    The algorithm iteratively improves the solution by making small changes (e.g., moving kiosks to neighboring cells) and accepting changes that improve the objective function (minimizing total distance).
+
+Follow Coding Standards:
+
+    Use meaningful variable names and proper indentation.
+    Comment your code to explain complex logic.
+
+Output (example):
+
+Artificial Intelligence
+
+MP3: Optimizing Kiosk Placement Using Hill Climbing Algorithm
+
+SEMESTER: Fall 2025
+
+NAME: [your name]
+
+
+Initial state: cost 29
+
+Improved kiosk locations: Total distance now 28
+
+Improved kiosk locations: Total distance now 27
+
+Improved kiosk locations: Total distance now 26
+
+Improved kiosk locations: Total distance now 25
+
+Improved kiosk locations: Total distance now 23
+
+Improved kiosk locations: Total distance now 21
+
+Improved kiosk locations: Total distance now 20
+
+Improved kiosk locations: Total distance now 19
+
+Improved kiosk locations: Total distance now 18
+
+Improved kiosk locations: Total distance now 17
+
+Improved kiosk locations: Total distance now 16
+
+Improved kiosk locations: Total distance now 15
+
+Improved kiosk locations: Total distance now 14
+
+Improved kiosk locations: Total distance now 13
+
+Improved kiosk locations: Total distance now 12
+
+Best kiosk locations: {(10, 7), (2, 4), (5, 12)}
+
+Minimum total distance to all gates: 12
